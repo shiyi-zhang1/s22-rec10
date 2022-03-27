@@ -131,7 +131,7 @@ class App extends Component<Props, GameState> {
       this.play(window.location.href);
       oldHref = window.location.href;
     } else if (
-        window.location.href === "http://localhost:3000/start"
+      oldHref !== window.location.href
     ){
       this.start();
       oldHref = window.location.href;
