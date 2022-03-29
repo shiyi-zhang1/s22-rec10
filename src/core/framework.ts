@@ -1,18 +1,15 @@
-package edu.cmu.cs.cs214.rec10.framework.core;
-
-import java.util.List;
 
 /**
  * The interface by which {@link GamePlugin} instances can directly interact
  * with the game framework.
  */
-public interface GameFramework {
-    /**
+interface GameFramework {
+  /**
      * Get the name of the player that currently has the move.
      */
-    String getCurrentPlayerName();
+  getCurrentPlayerName: () => string
 
-    /**
+  /**
      * Get the string associated with the grid square located at (x, y).
      *
      * @param x The x coordinate of the grid square.
@@ -21,9 +18,9 @@ public interface GameFramework {
      *         null if no string has been set at this location since the
      *         beginning of the game.
      */
-    String getSquare(int x, int y);
+  getSquare: (x: number, y: number) => string | null
 
-    /**
+  /**
      * Set the string associated with the grid square located at (x, y). The
      * framework will display the string, or the empty string if it is null.
      *
@@ -31,12 +28,14 @@ public interface GameFramework {
      * @param y The y coordinate of the grid square.
      * @param t The string to set at the grid square.
      */
-    void setSquare(int x, int y, String t);
+  setSquare: (x: number, y: number, t: string | null) => void
 
-    /**
+  /**
      * Sets the text to display at the bottom of the framework's display.
      *
      * @param text The text to display.
      */
-    void setFooterText(String text);
+  setFooterText: (text: string) => void
 }
+
+export { GameFramework }
