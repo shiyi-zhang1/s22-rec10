@@ -67,15 +67,6 @@ public final class TicTacToe {
      */
     public Player getSquare(int x, int y) { return grid[x][y]; }
 
-    public boolean isWin() {
-        return false;
-
-    }
-
-    public boolean isLost() {
-        return false;
-    }
-
     /** Returns whether the game is over. */
     public boolean isOver() {
         return winner() != null || allCellsAreFull();
